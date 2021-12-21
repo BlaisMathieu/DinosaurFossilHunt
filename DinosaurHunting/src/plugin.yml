@@ -1,0 +1,6 @@
+name: DinosaurHunting
+version: 1.0
+author: Canjas
+main: Canjas.DinosaurHunting
+api-version: 1.16
+load: STARTUP

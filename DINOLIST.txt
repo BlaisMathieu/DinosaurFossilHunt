@@ -1,0 +1,35 @@
+OCEAN : 	plesiosaur
+
+MESA : 		saurophaganax		ankylosaurus
+
+MARAIS: 	suchominus		spinosaure
+
+SAVANE: 	ceratosaurus		parasaure
+
+RIVER : 	spinosaure		parasaure
+
+PLAINE: 	ALL
+
+FORET:           Stegosaur		pachycephalosaurus	raptor
+
+DARK FOREST:	 triceratops		carnotaurus
+
+SAPIN FOREST:	 carnotaurus		Stegosaur		nothronychus
+
+TAIGA:		 giganotosaurus  	agathaumas
+
+JUNGLE:		T-Rex			triceratops
+
+BAMBOO FOREST:  pachycephalosaurus	raptor
+
+MONTAIN: 	Pterodactyle		T-Rex			raptor
+
+DESERT:		ankylosaurus       	ceratosaurus     
+
+BIOME GELEE:    agathaumas		nothronychus
+
+PICS DE GLACE:  pentaceratops
+
+OCEAN GELE : 	mosasaur    		plesiosaur
+
+
