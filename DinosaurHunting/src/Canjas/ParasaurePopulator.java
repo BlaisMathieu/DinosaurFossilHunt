@@ -16,22 +16,22 @@ import org.bukkit.generator.BlockPopulator;
 
 import java.util.Random;
 
-public class TyranosaurusPopulator extends BlockPopulator {
+public class ParasaurePopulator extends BlockPopulator {
 
     private int SpawnChance = 30000000;
 
-    public TyranosaurusPopulator() {}
+    public ParasaurePopulator() {}
 
     public void generate(Block block) {
         Location loc = block.getLocation();
         try {
-            SchematicLoading schem = new SchematicLoading("C:\\Users\\Mathieu\\Desktop\\serv\\plugins\\WorldEdit\\schematics\\GOODtrex.schem");
+            SchematicLoading schem = new SchematicLoading("C:\\Users\\Mathieu\\Desktop\\serv\\plugins\\WorldEdit\\schematics\\GOODpara.schem");
             Clipboard clipboard = schem.load();
             com.sk89q.worldedit.world.World adaptedWorld = BukkitAdapter.adapt(Bukkit.getServer().getWorld("world"));
             EditSession session = WorldEdit.getInstance().getEditSessionFactory().getEditSession(adaptedWorld, -1);
             Operation operation = new ClipboardHolder(clipboard).createPaste(session)
-                    .to(BlockVector3.at(loc.getX(), 15, loc.getZ())).ignoreAirBlocks(false).build();
-            Bukkit.broadcastMessage("Nouveau fossile de tyranosaurus : " + loc.getX() + "   " + loc.getZ());
+                    .to(BlockVector3.at(loc.getX(), 12, loc.getZ())).ignoreAirBlocks(false).build();
+            Bukkit.broadcastMessage("Nouveau fossile de parasaure : " + loc.getX() + "   " + loc.getZ());
             Bukkit.broadcastMessage("Biome :" + block.getBiome());
             Operations.complete(operation);
             session.flushSession();
@@ -46,14 +46,25 @@ public class TyranosaurusPopulator extends BlockPopulator {
                     Block block = chunk.getBlock(x, y, z);
                     int r = (int) (Math.random() * 10000000);
                     if (r == 3 && block.getType().compareTo(Material.STONE) == 0) {
-                        if (block.getBiome().equals(Biome.GIANT_TREE_TAIGA) || block.getBiome().equals(Biome.GIANT_SPRUCE_TAIGA)
-                            || block.getBiome().equals(Biome.GIANT_SPRUCE_TAIGA_HILLS) || block.getBiome().equals(Biome.GIANT_TREE_TAIGA_HILLS))
+                        if (block.getBiome().equals(Biome.PLAINS) || block.getBiome().equals(Biome.SUNFLOWER_PLAINS))
                             generate(block);
-                        else return;
+                        else if (block.getBiome().equals(Biome.RIVER)) {
+                            int t = (int) (Math.random() * 2);
+                            if (t == 1 && block.getType().compareTo(Material.STONE) == 0)
+                                generate(block);
+                        }
+                        else if ((block.getBiome().equals(Biome.FOREST) || block.getBiome().equals(Biome.BIRCH_FOREST)
+                                || block.getBiome().equals(Biome.FLOWER_FOREST) || block.getBiome().equals(Biome.BIRCH_FOREST_HILLS)
+                                || block.getBiome().equals(Biome.TALL_BIRCH_FOREST))) {
+                            int t = (int) (Math.random() * 3);
+                            if (t == 1 && block.getType().compareTo(Material.STONE) == 0)
+                                generate(block);
+                        }
+                        else
+                            return;
                     }
                 }
             }
         }
     }
 }
-

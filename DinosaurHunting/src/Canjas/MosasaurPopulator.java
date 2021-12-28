@@ -46,20 +46,17 @@ public class MosasaurPopulator extends BlockPopulator {
                     Block block = chunk.getBlock(x, y, z);
                     int r = (int) (Math.random() * 10000000);
                     if (r == 3 && block.getType().compareTo(Material.STONE) == 0) {
-                        if (block.getBiome() == Biome.DEEP_OCEAN)
-                            return;
-                        if (block.getBiome().equals(Biome.OCEAN) || block.getBiome().equals(Biome.WARM_OCEAN) || block.getBiome().equals(Biome.DEEP_OCEAN)
-                                || block.getBiome().equals(Biome.FROZEN_OCEAN) || block.getBiome().equals(Biome.COLD_OCEAN)
-                                || block.getBiome().equals(Biome.DEEP_COLD_OCEAN) || block.getBiome().equals(Biome.DEEP_FROZEN_OCEAN)
-                                || block.getBiome().equals(Biome.DEEP_LUKEWARM_OCEAN) || block.getBiome().equals(Biome.DEEP_WARM_OCEAN)
-                                || block.getBiome().equals(Biome.LUKEWARM_OCEAN))
+                        if (block.getBiome().equals(Biome.FROZEN_OCEAN) || block.getBiome().equals(Biome.DEEP_FROZEN_OCEAN))
                             generate(block);
-                        else {
-                            int t = (int) (Math.random() * 3);
-                            if (t == 1 && block.getType().compareTo(Material.STONE) == 0) {
+                        else if (block.getBiome().equals(Biome.OCEAN) || block.getBiome().equals(Biome.COLD_OCEAN)
+                             || block.getBiome().equals(Biome.DEEP_COLD_OCEAN) || block.getBiome().equals(Biome.DEEP_LUKEWARM_OCEAN)
+                             || block.getBiome().equals(Biome.DEEP_OCEAN) || block.getBiome().equals(Biome.DEEP_WARM_OCEAN)
+                             || block.getBiome().equals(Biome.LUKEWARM_OCEAN) || block.getBiome().equals(Biome.WARM_OCEAN)) {
+                            int t = (int) (Math.random() * 4);
+                            if (t == 1 && block.getType().compareTo(Material.STONE) == 0)
                                 generate(block);
-                            }
                         }
+                        else return;
                     }
                 }
             }

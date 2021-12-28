@@ -6,7 +6,7 @@ MARAIS: 	suchominus		spinosaure
 
 SAVANE: 	ceratosaurus		parasaure
 
-RIVER : 	spinosaure		parasaure
+RIVER : 	spinosaure		parasaure             suchominus
 
 PLAINE: 	ALL
 

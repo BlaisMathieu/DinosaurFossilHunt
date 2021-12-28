@@ -28,7 +28,7 @@ public class BlockListener implements Listener {
 
     public void loop(Block block) {
         Location loc = block.getLocation();
-        String a = String.valueOf((int)loc.getX());
+        String a = String.valueOf((int) loc.getX());
         String b = String.valueOf((int) loc.getY());
         String c = String.valueOf((int) loc.getZ());
         Pos.add(a + "." + b + "." + c);
@@ -51,16 +51,10 @@ public class BlockListener implements Listener {
     }
 
     @EventHandler
-    public void reco(PlayerJoinEvent event) {
-        event.getPlayer().setGameMode(GameMode.CREATIVE);
-    }
-
-    @EventHandler
     public void blockBreak(BlockBreakEvent event) {
         int sec = 1;
         Block block = event.getBlock();
         Player player = event.getPlayer();
-        //Bukkit.broadcastMessage(String.valueOf(this.Pos.size()));
         if (block.getType() == Material.SMOOTH_SANDSTONE || block.getType() == Material.SMOOTH_SANDSTONE_STAIRS || block.getType() == Material.BONE_BLOCK || block.getType() == Material.SMOOTH_SANDSTONE_SLAB) {
             player.sendMessage(ChatColor.DARK_GREEN + "On dirait un fossile ... Il ne faudrait pas l'abîmer !");
             event.setCancelled(true);

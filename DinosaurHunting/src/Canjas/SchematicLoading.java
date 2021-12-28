@@ -29,8 +29,9 @@ public class SchematicLoading {
                 for (int y = clipboard.getMinimumPoint().getY(); y <= clipboard.getMaximumPoint().getY(); y++) {
                     for (int z = clipboard.getMinimumPoint().getZ(); z <= clipboard.getMaximumPoint().getZ(); z++) {
                         BlockState block = clipboard.getBlock(BlockVector3.at(x, y, z));
-                        if (block.getBlockType().toString().equals("minecraft:smooth_sandstone") || block.getBlockType().toString().equals("minecraft:bone_block") ||  block.getBlockType().toString().equals("minecraft:smooth_sandstone_stairs"))
-                            continue;
+                        //if (block.getBlockType().toString().equals("minecraft:smooth_sandstone") || block.getBlockType().toString().equals("minecraft:bone_block") ||  block.getBlockType().toString().equals("minecraft:smooth_sandstone_stairs"))
+                          //  continue;
+                        // INUTILE ?
                     }
                 }
             }

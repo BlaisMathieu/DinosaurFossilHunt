@@ -46,19 +46,22 @@ public class RaptorPopulator extends BlockPopulator {
                     Block block = chunk.getBlock(x, y, z);
                      int r = (int) (Math.random() * 10000000);
                      if (r == 3 && block.getType().compareTo(Material.STONE) == 0) {
-                         if (block.getBiome() == Biome.DEEP_OCEAN)
-                             return;
-                         if (block.getBiome().equals(Biome.FOREST) || block.getBiome().equals(Biome.BIRCH_FOREST) || block.getBiome().equals(Biome.MOUNTAINS)
-                                 || block.getBiome().equals(Biome.BIRCH_FOREST_HILLS) || block.getBiome().equals(Biome.GRAVELLY_MOUNTAINS)
-                                 || block.getBiome().equals(Biome.MOUNTAIN_EDGE) || block.getBiome().equals(Biome.FLOWER_FOREST) || block.getBiome().equals(Biome.GRAVELLY_MOUNTAINS)
-                                 || block.getBiome().equals(Biome.SNOWY_MOUNTAINS))
+                         if (block.getBiome().equals(Biome.PLAINS) || block.getBiome().equals(Biome.SUNFLOWER_PLAINS))
                              generate(block);
-                         else {
-                             int t = (int) (Math.random() * 3);
-                             if (t == 1 && block.getType().compareTo(Material.STONE) == 0) {
+                         else if (block.getBiome().equals(Biome.TAIGA) || block.getBiome().equals(Biome.TAIGA_HILLS)
+                             || block.getBiome().equals(Biome.TAIGA_MOUNTAINS) || block.getBiome().equals(Biome.DESERT)
+                             || block.getBiome().equals(Biome.DESERT_HILLS) || block.getBiome().equals(Biome.DESERT_LAKES)) {
+                             int t = (int) (Math.random() * 2);
+                             if (t == 1 && block.getType().compareTo(Material.STONE) == 0)
                                  generate(block);
-                             }
                          }
+                         else if (block.getBiome().equals(Biome.SAVANNA) || block.getBiome().equals(Biome.SAVANNA_PLATEAU)
+                            || block.getBiome().equals(Biome.SHATTERED_SAVANNA) || block.getBiome().equals(Biome.SHATTERED_SAVANNA_PLATEAU)) {
+                             int t = (int) (Math.random() * 5);
+                             if (t == 1 && block.getType().compareTo(Material.STONE) == 0)
+                                 generate(block);
+                         }
+                         else return;
                     }
                 }
             }

@@ -46,18 +46,23 @@ public class CeratosaurusPopulator extends BlockPopulator {
                     Block block = chunk.getBlock(x, y, z);
                     int r = (int) (Math.random() * 10000000);
                     if (r == 3 && block.getType().compareTo(Material.STONE) == 0) {
-                        if (block.getBiome() == Biome.DEEP_OCEAN)
-                            return;
                         if (block.getBiome().equals(Biome.SAVANNA) || block.getBiome().equals(Biome.SAVANNA_PLATEAU) || block.getBiome().equals(Biome.SHATTERED_SAVANNA)
-                                || block.getBiome().equals(Biome.SHATTERED_SAVANNA_PLATEAU) || block.getBiome().equals(Biome.DESERT)
-                                || block.getBiome().equals(Biome.DESERT_HILLS) || block.getBiome().equals(Biome.DESERT_LAKES))
+                                || block.getBiome().equals(Biome.SHATTERED_SAVANNA_PLATEAU))
                             generate(block);
-                        else {
-                            int t = (int) (Math.random() * 3);
-                            if (t == 1 && block.getType().compareTo(Material.STONE) == 0) {
+                        else if (block.getBiome().equals(Biome.PLAINS) || block.getBiome().equals(Biome.SUNFLOWER_PLAINS)) {
+                            int t = (int) (Math.random() * 4);
+                            if (t == 1 && block.getType().compareTo(Material.STONE) == 0)
                                 generate(block);
-                            }
                         }
+                        else if ((block.getBiome().equals(Biome.FOREST) || block.getBiome().equals(Biome.BIRCH_FOREST)
+                                || block.getBiome().equals(Biome.FLOWER_FOREST) || block.getBiome().equals(Biome.BIRCH_FOREST_HILLS)
+                                || block.getBiome().equals(Biome.TALL_BIRCH_FOREST))) {
+                            int t = (int) (Math.random() * 15);
+                            if (t == 1 && block.getType().compareTo(Material.STONE) == 0)
+                                generate(block);
+                        }
+                        else
+                            return;
                     }
                 }
             }

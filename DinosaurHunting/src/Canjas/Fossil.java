@@ -21,20 +21,20 @@ public class Fossil {
             return ChatColor.DARK_PURPLE + "[Epique] Saurophaganax";    //good
         if (sec == 786)
             return ChatColor.YELLOW + "[Rare] Pterodactyle";        // good
-        if (sec == 1197)
-            return ChatColor.YELLOW + "[Rare] Pachycephalosaurus";   //good
         if (sec == 2974)
             return ChatColor.YELLOW + "[Rare] Stegosaur";            //good
         if (sec == 2530)
             return ChatColor.YELLOW + "[Rare] Plesiosaur";          //good
         if (sec == 686)
             return ChatColor.YELLOW + "[Rare] Crane de Giganotosaurus"; //good
+        if (sec == 1527)
+            return ChatColor.GREEN + "[Rare] Carnotaurus";    //good
         if (sec == 528)
             return ChatColor.GREEN + "[Commun] Raptor";         //good
         if (sec == 2610)
             return ChatColor.GREEN + "[Commun] Triceratops";    //good
-        if (sec == 1527)
-            return ChatColor.GREEN + "[Commun] Carnotaurus";    //good
+        if (sec == 1197)
+            return ChatColor.YELLOW + "[Commun] Pachycephalosaurus";   //good
         if (sec == 1735)
             return ChatColor.GREEN + "[Commun] Parasaure";      //good
         if (sec == 2284)

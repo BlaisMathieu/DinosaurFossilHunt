@@ -1,0 +1,21 @@
+SPINOSAUR : 100% Jungle
+TREX: 100% Giant Tree Taiga
+
+MOSASAUR HEAD: 80% océan gelé 20% ocean
+CERATOSAURUS: 75% savane 20% plaine 5% forest
+SUCHOMINUS: 75% marais 20% river 5% plaine
+SAUROPHAGANAX: 80% mesa 20% desert
+
+PLESIOSAUR : 70% océan 30% océan gelé
+PTERODACTYL: 50% mountain 20% mountain enneigé 20% savane 10% jungle
+GIGANOTOSAURUS HEAD: 20% mountain 60% mountain enneigé 20% plaine enneigé
+STEGOSAUR: 50% forest 30% river 15% marais 5% plaine
+CARNO: 60% taiga 20% Giant Tree Taiga 10% mountain  10% desert
+
+RAPTOR: 50% plaine 20% taiga 20% desert 10% savane
+TRICERATOPS: 50% dark forest 30% taiga 10% forest 10% plaine enneigé
+PACHY: 70% desert 30% mesa
+PARASAURE: 50% plaine 30% river 20% forest
+NOTHRO: 50% taiga enneigé 20% moutain enneigé 20% moutain 10% pics de glace
+PENTACERATOPS HEAD: 50% plaine enneigé 30% dark forest 20% taiga enneigé
+AGATHAUMAS HEAD: 60% pics de glace 20% taiga enneigé 10% river 10% dark forest

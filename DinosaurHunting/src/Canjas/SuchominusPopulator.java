@@ -16,22 +16,22 @@ import org.bukkit.generator.BlockPopulator;
 
 import java.util.Random;
 
-public class TyranosaurusPopulator extends BlockPopulator {
+public class SuchominusPopulator extends BlockPopulator {
 
     private int SpawnChance = 30000000;
 
-    public TyranosaurusPopulator() {}
+    public SuchominusPopulator() {}
 
     public void generate(Block block) {
         Location loc = block.getLocation();
         try {
-            SchematicLoading schem = new SchematicLoading("C:\\Users\\Mathieu\\Desktop\\serv\\plugins\\WorldEdit\\schematics\\GOODtrex.schem");
+            SchematicLoading schem = new SchematicLoading("C:\\Users\\Mathieu\\Desktop\\serv\\plugins\\WorldEdit\\schematics\\GOODsucho.schem");
             Clipboard clipboard = schem.load();
             com.sk89q.worldedit.world.World adaptedWorld = BukkitAdapter.adapt(Bukkit.getServer().getWorld("world"));
             EditSession session = WorldEdit.getInstance().getEditSessionFactory().getEditSession(adaptedWorld, -1);
             Operation operation = new ClipboardHolder(clipboard).createPaste(session)
                     .to(BlockVector3.at(loc.getX(), 15, loc.getZ())).ignoreAirBlocks(false).build();
-            Bukkit.broadcastMessage("Nouveau fossile de tyranosaurus : " + loc.getX() + "   " + loc.getZ());
+            Bukkit.broadcastMessage("Nouveau fossile de suchominus : " + loc.getX() + "   " + loc.getZ());
             Bukkit.broadcastMessage("Biome :" + block.getBiome());
             Operations.complete(operation);
             session.flushSession();
@@ -46,9 +46,18 @@ public class TyranosaurusPopulator extends BlockPopulator {
                     Block block = chunk.getBlock(x, y, z);
                     int r = (int) (Math.random() * 10000000);
                     if (r == 3 && block.getType().compareTo(Material.STONE) == 0) {
-                        if (block.getBiome().equals(Biome.GIANT_TREE_TAIGA) || block.getBiome().equals(Biome.GIANT_SPRUCE_TAIGA)
-                            || block.getBiome().equals(Biome.GIANT_SPRUCE_TAIGA_HILLS) || block.getBiome().equals(Biome.GIANT_TREE_TAIGA_HILLS))
+                        if (block.getBiome().equals(Biome.SWAMP) || block.getBiome().equals(Biome.SWAMP_HILLS) || block.getBiome().equals(Biome.RIVER))
                             generate(block);
+                        else if (block.getBiome().equals(Biome.RIVER)) {
+                            int t = (int) (Math.random() * 4);
+                            if (t == 2 && block.getType().compareTo(Material.STONE) == 0)
+                                generate(block);
+                        }
+                        else if (block.getBiome().equals(Biome.PLAINS) || block.getBiome().equals(Biome.SUNFLOWER_PLAINS)) {
+                            int t = (int) (Math.random() * 20);
+                            if (t == 2 && block.getType().compareTo(Material.STONE) == 0)
+                                generate(block);
+                        }
                         else return;
                     }
                 }
@@ -56,4 +65,3 @@ public class TyranosaurusPopulator extends BlockPopulator {
         }
     }
 }
-
